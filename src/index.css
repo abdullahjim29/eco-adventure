@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+li a.active{
+    color: #583CEA;
+    font-weight: 500;
+    background-color: white;
+}
+
+nav li{
+    font-size: 16px;
+    color: #434343;
+    font-weight: 500;
+}
