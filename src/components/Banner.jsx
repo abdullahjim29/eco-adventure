@@ -3,7 +3,7 @@ import ImageSlider from "./ImageSlider";
 const Banner = () => {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row py-10 space-y-6 text-left md:text-center lg:text-left">
+      <div className="flex flex-col lg:flex-row py-10 space-y-6 text-center md:text-center lg:text-left">
         <div className="space-y-5">
           <h1 className="w-full lg:w-10/12 text-3xl md:text-5xl lg:text-6xl font-semibold leading-12 md:leading-16 lg:leading-20 md:mx-auto lg:mx-0">
             Adventure Sustain Explore Nature Travel{" "}

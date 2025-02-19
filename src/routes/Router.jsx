@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import UpdateProfile from "../layouts/UpdateProfile";
 import UserProfile from "../layouts/UserProfile";
+import AdventureExperience from "../components/AdventureExperience";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home/>,
+                loader: () => fetch('/public/adventure.json'),
             },
             {
                 path: '/update-profile',

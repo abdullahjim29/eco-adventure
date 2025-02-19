@@ -1,7 +1,7 @@
 const ImageSlider = () => {
   return (
     <div className="carousel w-full">
-  <div id="slide1" className="carousel-item relative w-full ">
+  <div id="slide1" className="carousel-item relative w-full">
     <img
       src="https://i.ibb.co.com/nsC7HvGH/canoe-7101195-1280.jpg"
       className="w-full" />
