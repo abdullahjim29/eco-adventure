@@ -11,8 +11,10 @@ const MainLayout = () => {
         </nav>
       </header>
 
-      <main className="w-11/12 mx-auto">
-        <Outlet />
+      <main className="bg-[#FAF9FE]">
+        <section className="w-11/12 mx-auto">
+          <Outlet />
+        </section>
       </main>
 
       <footer></footer>
