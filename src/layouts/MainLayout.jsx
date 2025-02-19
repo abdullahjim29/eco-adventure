@@ -5,13 +5,13 @@ const MainLayout = () => {
   return (
     <div>
       {/* navbar */}
-      <header className="w-11/12 mx-auto">
-        <nav>
+      <header className="sticky top-0 z-10 backdrop-blur-md bg-white shadow-sm">
+        <nav className="w-11/12 mx-auto">
           <NavBar />
         </nav>
       </header>
 
-      <main className="bg-[#FAF9FE]">
+      <main className="bg-[#FAF9FE] border border-[#FAF9FE]">
         <section className="w-11/12 mx-auto">
           <Outlet />
         </section>

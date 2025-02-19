@@ -28,3 +28,8 @@ nav li{
     background: #efefef;
     text-align: center;
   }
+
+html{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

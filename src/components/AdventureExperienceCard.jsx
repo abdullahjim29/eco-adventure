@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const AdventureExperienceCard = ({ singleData }) => {
   const { title, image, ecoFriendlyFeatures, location } = singleData;
   return (
-    <div className="card bg-base-100 border border-gray-300">
+    <div data-aos="zoom-in" data-aos-duration="2000" className="card bg-base-100 border border-gray-300">
       <figure>
         <img src={image} alt={title} />
       </figure>

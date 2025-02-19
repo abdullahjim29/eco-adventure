@@ -37,7 +37,7 @@ const NavBar = () => {
         </div>
         <Link to='/'>
         <div className="w-[180px]">
-        <img className="w-full" src={logo2} alt="" />
+        <img className="w-full " src={logo2} alt="" />
         </div>
         </Link>
       </div>
@@ -47,7 +47,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Login</a>
+        <Link to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Login</Link>
       </div>
     </div>
   );
