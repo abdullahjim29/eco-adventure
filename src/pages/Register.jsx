@@ -1,6 +1,31 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../layouts/AuthProvider";
 
 const Register = () => {
+
+  const {createUser} = useContext(AuthContext);
+
+  // user register
+  const handleSubmitForm = e => {
+    e.preventDefault();
+
+    // get user input value
+    const name = e.target.name.value;
+    const photoUrl = e.target.photoUrl.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confrimPassword = e.target.confrimPassword.value;
+
+    // create user
+    createUser(email, password)
+    .then(res => {
+      console.log(res.user);
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
+  }
   return (
     <div className="flex justify-center py-10">
         <div className="w-full flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-gray-300">
@@ -10,7 +35,7 @@ const Register = () => {
           Create your New account!
         </p>
       </div>
-      <form className="space-y-12">
+      <form onSubmit={handleSubmitForm} className="space-y-12">
         <div className="space-y-4">
           <div>
             <label className="block mb-2 text-sm">
@@ -18,7 +43,7 @@ const Register = () => {
             </label>
             <input
               type="text"
-              name="first-name"
+              name="name"
               placeholder="First Name"
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               required
@@ -30,7 +55,7 @@ const Register = () => {
             </label>
             <input
               type="text"
-              name="photo"
+              name="photoUrl"
               placeholder="Photo URL"
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               required
@@ -70,7 +95,7 @@ const Register = () => {
             </div>
             <input
               type="password"
-              name="-confrim-password"
+              name="confrimPassword"
               placeholder="*****"
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
               required
@@ -80,7 +105,6 @@ const Register = () => {
         <div className="space-y-2">
           <div>
             <button
-              type="button"
               className="w-full px-8 py-3 font-semibold rounded-md bg-[#583CEA] text-white"
             >
               Register
