@@ -26,7 +26,7 @@ const Banner = () => {
             dives. Travel responsibly, book easily, and experience nature
             sustainably!
           </p>
-          <div data-aos="zoom-in" data-aos-delay='2000' className="space-x-5 space-y-2 md:space-y-0">
+          <div data-aos="zoom-in" data-aos-delay='1500' className="space-x-5 space-y-2 md:space-y-0">
             <button className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6 hover:bg-white hover:border border-[#583CEA] hover:text-[#583CEA]">
               Explore More
             </button>
