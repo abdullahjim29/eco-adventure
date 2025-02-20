@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createContext, use, useEffect, useState } from "react";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import auth from '../firebase/firebase.config'
 export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
@@ -17,11 +17,21 @@ const AuthProvider = ({children}) => {
     }
 
     // spy on user....
-    
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+        })
+
+        return () => {
+            unSubscribe();
+        }
+    }, [])
 
     const authInfo = {
         createUser,
         loginUser,
+        user,
+        setUser
     }
     return (
         <AuthContext.Provider value={authInfo}>

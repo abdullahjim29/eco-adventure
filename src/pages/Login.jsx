@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { use, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../layouts/AuthProvider";
 
 const Login = () => {
 
-	const {loginUser} = useContext(AuthContext);
+	const {loginUser, setUser, user} = useContext(AuthContext);
 
 	// handle login form
 	const handleLoginForm = e => {
@@ -17,12 +17,13 @@ const Login = () => {
 		// login user
 		loginUser(email, password)
 		.then(res => {
-			console.log(res.user);
+			setUser(res.user);
 		})
 		.catch(err => {
 			console.log(err.message);
 		})
 	}
+	console.log(user);
   return (
     <div className="flex justify-center py-10">
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 border border-gray-300">
