@@ -7,6 +7,7 @@ import AdventureExperience from "../components/AdventureExperience";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AdventureDetail from "../pages/AdventureDetail";
+import PrivateRoute from "../layouts/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/adventure-details/:id',
-                element: <AdventureDetail/>,
+                element: <PrivateRoute><AdventureDetail/></PrivateRoute>,
                 loader: ({params}) => fetch(`/public/adventure.json/${params.id}`)
             }
         ]
