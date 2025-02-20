@@ -6,7 +6,7 @@ const Register = () => {
 
   const {createUser} = useContext(AuthContext);
 
-  // user register
+  // handle submit form
   const handleSubmitForm = e => {
     e.preventDefault();
 
