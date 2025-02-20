@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../layouts/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/firebase.config";
 
 const Register = () => {
 
-  const {createUser} = useContext(AuthContext);
+  const {createUser, setUser, user} = useContext(AuthContext);
 
   // handle submit form
   const handleSubmitForm = e => {
@@ -17,15 +19,26 @@ const Register = () => {
     const password = e.target.password.value;
     const confrimPassword = e.target.confrimPassword.value;
 
+
+    const updateInfo = {
+      displayName: name, photoURL: photoUrl
+    }
+
     // create user
     createUser(email, password)
     .then(res => {
-      console.log(res.user);
+      setUser(res.user);
+      updateProfile(auth.currentUser,updateInfo)
+      .then(() => {
+      }).catch(() => {
+
+      });
     })
     .catch(err => {
       console.log(err.message);
     })
   }
+  console.log(user);
   return (
     <div className="flex justify-center py-10">
         <div className="w-full flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-gray-300">
