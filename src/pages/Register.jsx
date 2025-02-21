@@ -39,7 +39,6 @@ const Register = () => {
       console.log(err.message);
     })
   }
-  console.log(user);
   return (
     <div className="flex justify-center py-10">
         <div className="w-full flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-gray-300">
@@ -68,7 +67,7 @@ const Register = () => {
               Photo URL
             </label>
             <input
-              type="text"
+              type="url"
               name="photoUrl"
               placeholder="Photo URL"
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"

@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo2 from '../assets/logo2.png'
 import { useContext } from "react";
 import { AuthContext } from "../layouts/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
   const {logOutUser, user} = useContext(AuthContext);
@@ -52,7 +53,7 @@ const NavBar = () => {
       <div className="navbar-end">
         {
           user ? <div className="flex items-center gap-1">
-            <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" />
+            <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user.photoURL } alt="" /> 
             <Link onClick={logOutUser} to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Log Out</Link>
           </div> : <Link to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Login</Link>
         }

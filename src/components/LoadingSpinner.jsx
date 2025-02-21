@@ -1,7 +1,7 @@
 import { RotatingLines } from 'react-loader-spinner'
 const LoadingSpinner = () => {
     return (
-        <div className='min-h-screen flex justify-center'>
+        <div className='min-h-[500px] flex justify-center'>
         <RotatingLines
 		height="80"
 		width="80"

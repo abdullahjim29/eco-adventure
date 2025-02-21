@@ -1,14 +1,15 @@
 import { createContext, useEffect, useState } from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from '../firebase/firebase.config'
-import LoadingSpinner from "../components/loadingSpinner";
+import { Toaster } from 'react-hot-toast';
 export const AuthContext = createContext();
+const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
 
-    
+
     // register user
     const createUser = (email, password) => {
         setLoading(true)
@@ -17,8 +18,12 @@ const AuthProvider = ({children}) => {
 
     // login user
     const loginUser = (email, password) => {
-        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    // login with google
+    const loginWithGoogle = () => {
+        return signInWithPopup(auth, googleProvider)
     }
 
     // log out user
@@ -33,6 +38,7 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
+            
         })
 
         return () => {
@@ -46,12 +52,14 @@ const AuthProvider = ({children}) => {
         user,
         setUser,
         logOutUser,
-        loading
+        loading,
+        loginWithGoogle
     }
+    console.log(user);
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
-            
+            <Toaster/>
         </AuthContext.Provider>
     );
 };
