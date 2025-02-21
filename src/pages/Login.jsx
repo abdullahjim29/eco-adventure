@@ -1,10 +1,15 @@
 import { use, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../layouts/AuthProvider";
+import LoadingSpinner from "../components/loadingSpinner";
 
 const Login = () => {
 
-	const {loginUser, setUser, user} = useContext(AuthContext);
+	const {loginUser, setUser, user, loading} = useContext(AuthContext);
+
+	if(loading){
+		return <LoadingSpinner/>
+	}
 
 	// handle login form
 	const handleLoginForm = e => {

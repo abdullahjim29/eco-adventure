@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../layouts/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 const Register = () => {
-
+  const navigate = useNavigate()
   const {createUser, setUser, user} = useContext(AuthContext);
 
   // handle submit form
@@ -28,6 +28,7 @@ const Register = () => {
     createUser(email, password)
     .then(res => {
       setUser(res.user);
+      navigate('/');
       updateProfile(auth.currentUser,updateInfo)
       .then(() => {
       }).catch(() => {

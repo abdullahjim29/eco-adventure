@@ -52,7 +52,7 @@ const NavBar = () => {
       <div className="navbar-end">
         {
           user ? <div className="flex items-center gap-1">
-            <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" />
+            <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" />
             <Link onClick={logOutUser} to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Log Out</Link>
           </div> : <Link to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Login</Link>
         }
