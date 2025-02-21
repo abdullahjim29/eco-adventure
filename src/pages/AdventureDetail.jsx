@@ -11,6 +11,7 @@ const AdventureDetail = () => {
     }, [])
 
     const exactData = [...adventureData].find(data => data.id === parseInt(id));
+    console.log(exactData);
     return (
         <div>
             <h2 className="text-5xl">{exactData?.title}</h2>

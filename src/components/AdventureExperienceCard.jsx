@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const AdventureExperienceCard = ({ singleData }) => {
   const { title, image, ecoFriendlyFeatures, location, id } = singleData;
   return (
-    <div data-aos="zoom-in" data-aos-duration="2000" className="card bg-base-100 border border-gray-300">
-      <figure>
-        <img src={image} alt={title} />
+    <div data-aos="zoom-in" data-aos-duration="2000" className="card bg-base-100 border border-gray-300 group">
+      <figure className="relative overflow-hidden">
+        <img className="transition-transform duration-300 ease-in-out group-hover:scale-110" src={image} alt={title} />
       </figure>
       <div className="card-body flex flex-col space-y-3">
         <h2 className="card-title text-2xl">{title}</h2>
