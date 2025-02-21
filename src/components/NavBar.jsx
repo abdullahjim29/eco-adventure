@@ -52,10 +52,20 @@ const NavBar = () => {
       </div>
       <div className="navbar-end">
         {
-          user ? <div className="flex items-center gap-1">
+          user ? <div className="flex items-center gap-2">
             <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" /> 
-            <Link onClick={logOutUser} to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Log Out</Link>
-          </div> : <Link to='/auth/login' className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6">Login</Link>
+            <Link onClick={logOutUser} to='/auth/login'
+              className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
+            >
+              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative font-semibold">Log Out</span>
+            </Link>
+          </div> : <Link to='/auth/login'
+              className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
+            >
+              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative">Login</span>
+            </Link>
         }
       </div>
     </div>
