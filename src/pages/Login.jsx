@@ -10,7 +10,7 @@ const Login = () => {
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
+	console.log(location);
   if (loading) {
     return <LoadingSpinner />;
   }

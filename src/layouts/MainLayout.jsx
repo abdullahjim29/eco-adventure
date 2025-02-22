@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import Footer from "./Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       {/* navbar */}
       <header className="sticky top-0 z-10 backdrop-blur-md bg-white shadow-sm">
         <nav className="w-11/12 mx-auto">
@@ -11,13 +12,15 @@ const MainLayout = () => {
         </nav>
       </header>
 
-      <main className="bg-[#FAF9FE] border border-[#FAF9FE]">
+      <main className="bg-[#FAF9FE] border border-[#FAF9FE] flex-grow">
         <section className="w-11/12 mx-auto">
           <Outlet />
         </section>
       </main>
 
-      <footer></footer>
+      <footer className="">
+        <Footer/>
+      </footer>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import AdventureDetailsCard from "../components/AdventureDetailsCard";
 const AdventureDetail = () => {
     const {id} = useParams()
     const [adventureData, setAdventureData] = useState([]);
@@ -11,11 +12,11 @@ const AdventureDetail = () => {
     }, [])
 
     const exactData = [...adventureData].find(data => data.id === parseInt(id));
-    console.log(exactData);
+
     return (
-        <div>
-            <h2 className="text-5xl">{exactData?.title}</h2>
-        </div>
+        <>
+            <AdventureDetailsCard destination={exactData}/>
+        </>
     );
 };
 
