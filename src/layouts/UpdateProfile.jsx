@@ -1,5 +1,37 @@
+import { useContext } from "react";
+import { AuthContext } from "./AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/firebase.config";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
 const UpdateProfile = () => {
   document.title = 'Update Profile'
+
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleUpdate = (e) => {
+    e.preventDefault()
+    const name = e.target.name.value;
+    const photo = e.target.photoUrl.value;
+
+    const letestInfo = {
+      displayName: name,
+      photoURL: photo,
+    }
+
+    if(user){
+      updateProfile(auth.currentUser, letestInfo)
+      .then(() => {
+        navigate('/user-profile')
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      })
+    }
+
+  }
     return (
         <div>
            <div className="flex justify-center py-10">
@@ -7,7 +39,7 @@ const UpdateProfile = () => {
         <div className="mb-8 text-center">
           <h1 className="my-3 text-3xl font-bold">Update Your Profile</h1>
         </div>
-        <form className="space-y-12">
+        <form onSubmit={handleUpdate} className="space-y-12">
           <div className="space-y-4">
             <div>
               <label className="block mb-2 text-sm">Name</label>
