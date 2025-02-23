@@ -7,12 +7,13 @@ const AdventureDetailsCard = ({ destination }) => {
   const handleGoogleMeeting = () => {
     const now = new Date();
     const hour = now.getHours();
-    if (hour >= 10 && hour <= 23) {
-      window.open('https://meet.google.com/', '_blank');
+    if (hour >= 10 && hour <= 9) {
+      window.open("https://meet.google.com/", "_blank");
     } else {
-      alert('Can Not Open')
+      alert(`You can consult between 10 am to 8 pm`)
     }
   };
+
   const {
     adventureLevel,
     bookingAvailability,
@@ -34,7 +35,7 @@ const AdventureDetailsCard = ({ destination }) => {
     title,
   } = destination || {};
   return (
-    <div className="my-14">
+    <div id="des" className="my-14">
       <div className="space-y-2">
         <h2 className="text-3xl font-semibold">{title}</h2>
         <div className="flex items-center gap-1 text-sm ">
@@ -163,13 +164,14 @@ const AdventureDetailsCard = ({ destination }) => {
 
         <div className="my-5">
           <Link
-          onClick={handleGoogleMeeting}
+            onClick={handleGoogleMeeting}
             className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
           >
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="relative">Talk With Expert</span>
           </Link>
         </div>
+
       </section>
     </div>
   );
