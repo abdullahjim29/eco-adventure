@@ -35,7 +35,7 @@ const AdventureDetailsCard = ({ destination }) => {
     title,
   } = destination || {};
   return (
-    <div id="des" className="my-14">
+    <div id="des" className="my-14 w-11/12 mx-auto">
       <div className="space-y-2">
         <h2 className="text-3xl font-semibold">{title}</h2>
         <div className="flex items-center gap-1 text-sm ">

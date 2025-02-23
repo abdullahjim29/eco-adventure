@@ -53,7 +53,10 @@ const NavBar = () => {
       <div className="navbar-end">
         {
           user ? <div className="flex items-center gap-2">
-            <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" /> 
+            {
+              user?.photoURL ? <img title={user.displayName} className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" />
+               :<FaUserCircle className="text-4xl" title={user?.displayName}/>
+            }
             <Link onClick={logOutUser} to='/auth/login'
               className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
             >

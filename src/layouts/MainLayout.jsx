@@ -13,7 +13,7 @@ const MainLayout = () => {
       </header>
 
       <main className="bg-[#FAF9FE] border border-[#FAF9FE] flex-grow">
-        <section className="w-11/12 mx-auto">
+        <section className="">
           <Outlet />
         </section>
       </main>

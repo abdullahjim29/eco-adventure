@@ -14,7 +14,7 @@ const Banner = () => {
   });
   return (
     // animate__animated animate__pulse
-    <div>
+    <div className="w-11/12 mx-auto">
       <div className="flex flex-col lg:flex-row py-10 space-y-6 text-center md:text-center lg:text-left">
         <div className="space-y-5">
           <h1 data-aos="fade-right" className="w-full lg:w-10/12 text-3xl md:text-5xl lg:text-6xl font-semibold leading-12 md:leading-16 lg:leading-20 md:mx-auto lg:mx-0">
