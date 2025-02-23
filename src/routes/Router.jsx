@@ -3,7 +3,6 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import UpdateProfile from "../layouts/UpdateProfile";
 import UserProfile from "../layouts/UserProfile";
-import AdventureExperience from "../components/AdventureExperience";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AdventureDetail from "../pages/AdventureDetail";

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
-import 'animate.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -13,7 +12,6 @@ const Banner = () => {
     });
   });
   return (
-    // animate__animated animate__pulse
     <div className="w-11/12 mx-auto">
       <div className="flex flex-col lg:flex-row py-10 space-y-6 text-center md:text-center lg:text-left">
         <div className="space-y-5">

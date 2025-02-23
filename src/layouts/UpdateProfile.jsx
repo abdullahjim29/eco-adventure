@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-
 const UpdateProfile = () => {
+  document.title = 'Update Profile'
     return (
         <div>
            <div className="flex justify-center py-10">

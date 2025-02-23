@@ -3,6 +3,8 @@ import Banner from "../components/Banner";
 import DestinationCarousel from "../components/DestinationCarousel";
 
 const Home = () => {
+    document.title = 'Home'
+
     return (
         <div>
             <header className="my-5">

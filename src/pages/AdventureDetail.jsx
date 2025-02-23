@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AdventureDetailsCard from "../components/AdventureDetailsCard";
 const AdventureDetail = () => {
+    document.title = 'Adventure Details'
     const {id} = useParams()
     const [adventureData, setAdventureData] = useState([]);
 

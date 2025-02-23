@@ -3,14 +3,16 @@ import { AuthContext } from "./AuthProvider";
 import { Link } from "react-router-dom";
 import bgProfile from '../assets/bg-profile.jpg'
 import { FaUserCircle } from "react-icons/fa";
+import 'animate.css';
 
 const UserProfile = () => {
+	document.title = 'User Profile'
   const { user } = useContext(AuthContext);
   console.log(user);
   return (
     <div className="min-h-screen">
 		<div style={{background: `url(${bgProfile})`}} className="py-24 bg-cover bg-center">
-		<h2 className="text-2xl md:text-4xl text-center font-semibold text-white">Wellcome to your profile {user?.displayName}!</h2>
+		<h2 className="text-2xl md:text-4xl text-center font-semibold text-white animate__animated animate__swing">Wellcome to your profile {user?.displayName}!</h2>
 		</div>
       
      <div className="flex flex-col justify-center dark:bg-white w-8/12 mx-auto shadow">
@@ -68,7 +70,7 @@ const UserProfile = () => {
         </div>
       </div>
 
-		<div className="w-5/12"><Link to='/update-profile'><button className="btn bg-[#5639F1] w-full my-3 text-white">Upate Profile</button></Link></div>
+		<div className="w-full md:w-5/12 ml-0 md:ml-7"><Link to='/update-profile'><button className="btn bg-[#5639F1] w-full my-3 text-white">Upate Profile</button></Link></div>
 	 </div>
 	 </div>
   );
