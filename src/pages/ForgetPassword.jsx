@@ -3,7 +3,6 @@ import { AuthContext } from "../layouts/AuthProvider";
 import { sendPasswordResetEmail } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import toast from "react-hot-toast";
-import { useLocation } from "react-router-dom";
 
 const ForgetPassword = () => {
     const {user} = useContext(AuthContext);
@@ -12,8 +11,6 @@ const ForgetPassword = () => {
         e.preventDefault();
 
         const email = e.target.email.value;
-
-        console.log(email);
 
         sendPasswordResetEmail(auth, email)
         .then(() => {

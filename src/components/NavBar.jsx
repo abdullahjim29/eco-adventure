@@ -71,7 +71,7 @@ const NavBar = () => {
       <div className="navbar-end">
       {
               user?.photoURL ? <img title={user.displayName} className="w-[50px] h-[50px] rounded-full block md:hidden" src={user.photoURL} alt="" />
-               :<FaUserCircle className="text-4xl mr-3" title={user?.displayName}/>
+               : <FaUserCircle className="text-4xl block md:hidden" title={user?.displayName}/>
             }
         <div className="hidden md:block">
         {
