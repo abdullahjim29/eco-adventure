@@ -1,5 +1,6 @@
 import AdventureExperience from "../components/AdventureExperience";
 import Banner from "../components/Banner";
+import BestDeal from "../components/BestDeal";
 import DestinationCarousel from "../components/DestinationCarousel";
 
 const Home = () => {
@@ -23,7 +24,13 @@ const Home = () => {
                 <section>
                     <DestinationCarousel/>
                 </section>
+
+                {/* best deals */}
+                <section className="my-20">
+                    <BestDeal/>
+                </section>
             </main>
+            
         </div>
     );
 };

@@ -33,3 +33,10 @@ html{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+#best-deal{
+    background-image: 
+    linear-gradient(to left, rgba(41, 40, 40, 0.12),rgba(29, 28, 28, 0.80)),
+    url("./assets/best-deal.jpg");
+  
+}
