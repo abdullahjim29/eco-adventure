@@ -34,10 +34,28 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3"
           >
             {links}
+            <div className="">
+        {
+          user ? <div className="flex items-center gap-2">
+            <Link onClick={logOutUser} to='/auth/login'
+              className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
+            >
+              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative font-semibold">Log Out</span>
+            </Link>
+          </div> : <Link to='/auth/login'
+              className=" rounded px-5 py-2.5 overflow-hidden group bg-[#583CEA] relative hover:bg-gradient-to-r hover:from-[#583CEA] hover:to-[#5230ff] text-white hover:ring-2 hover:ring-offset-2 hover:ring-[#583CEA] transition-all ease-out duration-300"
+            >
+              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative">Login</span>
+            </Link>
+        }
+        </div>
           </ul>
+          
         </div>
         <Link to='/'>
         <div className="w-[180px]">
@@ -51,6 +69,11 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+      {
+              user?.photoURL ? <img title={user.displayName} className="w-[50px] h-[50px] rounded-full block md:hidden" src={user.photoURL} alt="" />
+               :<FaUserCircle className="text-4xl mr-3" title={user?.displayName}/>
+            }
+        <div className="hidden md:block">
         {
           user ? <div className="flex items-center gap-2">
             {
@@ -70,6 +93,7 @@ const NavBar = () => {
               <span className="relative">Login</span>
             </Link>
         }
+        </div>
       </div>
     </div>
   );

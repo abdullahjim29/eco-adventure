@@ -15,7 +15,7 @@ const UserProfile = () => {
 		<h2 className="text-2xl md:text-5xl text-center font-semibold text-white animate__animated animate__swing">Wellcome to your profile {user?.displayName}!</h2>
 		</div>
       
-     <div className="flex flex-col justify-center dark:bg-white w-8/12 mx-auto shadow">
+     <div className="flex flex-col justify-center dark:bg-white w-8/12 mx-auto shadow mb-20">
 		
 	 <div className="p-8 sm:flex sm:space-x-6 dark:text-gray-800">
 

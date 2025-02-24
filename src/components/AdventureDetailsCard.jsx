@@ -50,20 +50,19 @@ const AdventureDetailsCard = ({ exactData }) => {
         <div className="flex items-center gap-1 text-sm ">
           <FaLocationDot />
           <p>{location}</p>
-          <p className="ml-5">{category}</p>
         </div>
       </div>
 
       {/* images */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 my-3">
-        <div className="col-span-7">
-          <img className="h-[410px] w-full" src={image} alt="" />
+      <div className="grid lg:grid-cols-12 gap-2 my-3">
+        <div className="col-span-1 md:col-span-7">
+          <img className="h-[200px] md:h-[410px] w-full" src={image} alt="" />
         </div>
 
         <div className="md:col-span-7 lg:col-span-5">
           <div className="grid md:grid-cols-2 gap-2">
             <div className="h-full md:h-[200px]">
-              <img className="h-full w-full" src={img1} alt="" />
+              <img className="h-full w-full object-cover" src={img1} alt="" />
             </div>
 
             <div className="h-full md:h-[200px]">
@@ -82,7 +81,7 @@ const AdventureDetailsCard = ({ exactData }) => {
       </div>
 
       {/* description */}
-      <div className="w-8/12 my-10">
+      <div className="w-full lg:w-8/12 my-10">
         <h3 className="text-xl font-semibold">Description</h3>
         <p>{longDescription}</p>
       </div>
@@ -92,22 +91,20 @@ const AdventureDetailsCard = ({ exactData }) => {
         <h2 className="text-xl font-semibold">
           Eco Friendly Features Facilities
         </h2>
-        <div className="flex items-center gap-3 my-4">
-          <ul className="space-x-4">
+        <div className="my-4 flex flex-col md:flex-row gap-6"> 
             {ecoFriendlyFeatures?.map((feature, idx) => (
-              <button
+              <div
                 key={idx}
-                className="btn hover:bg-[#FAF9FE] border-[#5334F9]"
+                className="hover:bg-[#FAF9FE] border border-[#5334F9] p-3 md:p-1 lg:p-3 rounded-md w-1/2 text-center"
               >
                 {feature}
-              </button>
+              </div>
             ))}
-          </ul>
         </div>
       </section>
 
       {/* others options */}
-      <section className="space-y-4 w-8/12">
+      <section className="space-y-4 w-full lg:w-8/12">
         <h2 className="text-xl font-semibold mt-14">Others Information</h2>
         <div>
           <table className="table">
