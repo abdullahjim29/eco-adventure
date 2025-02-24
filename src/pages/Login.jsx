@@ -7,10 +7,10 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const { loginUser, setUser, loading, loginWithGoogle} =
-    useContext(AuthContext);
+  useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-	console.log(location);
+
   if (loading) {
     return <LoadingSpinner />;
   }
@@ -88,7 +88,7 @@ const Login = () => {
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
             <div className="flex justify-end text-xs dark:text-gray-600">
-              <Link to="">Forgot Password?</Link>
+              <Link to="/forget-password">Forgot Password?</Link>
             </div>
           </div>
           <button className="block w-full p-3 text-center rounded-sm text-white font-semibold bg-[#583CEA]">

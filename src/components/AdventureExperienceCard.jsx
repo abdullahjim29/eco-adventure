@@ -14,7 +14,7 @@ const AdventureExperienceCard = ({ singleData }) => {
           <h3 className="font-bold text-[16px]">Eco Friendly Features</h3>
           <ul className="ml-3">
             {ecoFriendlyFeatures.map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-1 text-[14px]">
+              <div key={idx} feature={feature} className="flex items-center gap-1 text-[14px]">
               <CiCircleCheck  className="text-[#583CEA] font-bold" />
               <li>{feature}</li>
               </div>

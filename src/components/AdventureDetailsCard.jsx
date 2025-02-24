@@ -1,13 +1,13 @@
+import { CiCircleCheck } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const AdventureDetailsCard = ({ destination }) => {
-  console.log(destination);
+const AdventureDetailsCard = ({ exactData }) => {
 
   const handleGoogleMeeting = () => {
     const now = new Date();
     const hour = now.getHours();
-    if (hour >= 10 && hour <= 9) {
+    if (hour >= 10 && hour <= 18) {
       window.open("https://meet.google.com/", "_blank");
     } else {
       alert(`You can consult between 10 am to 8 pm`)
@@ -33,7 +33,7 @@ const AdventureDetailsCard = ({ destination }) => {
     maxGroupSize,
     specialInstructions,
     title,
-  } = destination || {};
+  } = exactData || {};
   return (
     <div id="des" className="my-14 w-11/12 mx-auto">
       <div className="space-y-2">
@@ -84,13 +84,13 @@ const AdventureDetailsCard = ({ destination }) => {
           Eco Friendly Features Facilities
         </h2>
         <div className="flex items-center gap-3 my-4">
-          {ecoFriendlyFeatures?.map((feature, idx) => (
-            <div key={idx} feature={feature} className="">
-              <button className="btn hover:bg-[#FAF9FE] border-[#5334F9]">
-                {feature}
-              </button>
-            </div>
-          ))}
+        <ul className="space-x-4">
+            {ecoFriendlyFeatures?.map((feature, idx) => (
+              <button key={idx} className="btn hover:bg-[#FAF9FE] border-[#5334F9]">
+              {feature}
+            </button>
+            ))}
+          </ul>
         </div>
       </section>
 

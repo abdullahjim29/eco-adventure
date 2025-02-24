@@ -7,16 +7,16 @@ const AdventureDetail = () => {
     const [adventureData, setAdventureData] = useState([]);
 
     useEffect(() => {
-        fetch('/public/adventure.json')
+        fetch('/adventure.json')
         .then(res => res.json())
         .then(data => setAdventureData(data))
     }, [])
 
-    const exactData = [...adventureData].find(data => data.id === parseInt(id));
+    const exactData = adventureData.find(data => data.id === parseInt(id));
 
     return (
         <>
-            <AdventureDetailsCard destination={exactData}/>
+            <AdventureDetailsCard exactData={exactData}/>
         </>
     );
 };

@@ -16,7 +16,7 @@ const destinations = [
 
 const DestinationCarousel = () => {
   return (
-    <div className="w-11/12 mx-auto flex flex-col items-center py-10">
+    <div className="w-11/12 mx-auto flex flex-col items-center py-10 my-20">
       <h2 className="text-2xl md:text-4xl font-bold">Most Popular Destinations</h2>
       <p className="text-gray-500 text-center mb-10 mt-6 w-full md:w-7/12">
       Expand your travel horizons with new facets! Explore the world by choosing your ideal travel destinations in Asia, Europe, America, Australia and more with ShareTrip.
@@ -41,7 +41,7 @@ const DestinationCarousel = () => {
         className="w-full max-w-5xl"
       >
         {destinations.map((destination, index) => (
-          <SwiperSlide key={index} className="relative w-64 h-96">
+          <SwiperSlide key={index} destination={destination} className="relative w-64 h-96">
             <img
               src={destination.image}
               alt={destination.name}

@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import AdventureDetail from "../pages/AdventureDetail";
 import PrivateRoute from "../layouts/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
+import ForgetPassword from "../pages/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: () => fetch('/public/adventure.json'),
+                loader: () => fetch('/adventure.json'),
             },
             {
                 path: '/update-profile',
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
             {
                 path: '/adventure-details/:id',
                 element: <PrivateRoute><AdventureDetail/></PrivateRoute>,
-                loader: ({params}) => fetch(`/public/adventure.json/${params.id}`)
+                loader: ({params}) => fetch(`/adventure.json/${params.id}`)
+            },
+            {
+                path: '/forget-password',
+                element: <ForgetPassword/>
             }
         ]
     },

@@ -8,7 +8,7 @@ import 'animate.css';
 const UserProfile = () => {
 	document.title = 'User Profile'
   const { user } = useContext(AuthContext);
-  console.log(user);
+
   return (
     <div className="min-h-screen">
 		<div style={{background: `url(${bgProfile})`}} className="py-24">

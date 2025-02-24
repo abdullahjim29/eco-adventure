@@ -34,7 +34,7 @@ const UpdateProfile = () => {
   }
     return (
         <div>
-           <div className="flex justify-center py-10">
+      <div className="flex justify-center py-10">
       <div className="w-full flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800 border border-gray-300 ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-3xl font-bold">Update Your Profile</h1>
