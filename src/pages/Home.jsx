@@ -26,7 +26,7 @@ const Home = () => {
                 </section>
 
                 {/* best deals */}
-                <section className="my-20">
+                <section className="my-40">
                     <BestDeal/>
                 </section>
             </main>
