@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import ImageSlider from "./ImageSlider";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { useEffect } from "react";
+import BannerImageSlider from "./BannerImageSlider";
 const Banner = () => {
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Banner = () => {
             dives. Travel responsibly, book easily, and experience nature
             sustainably!
           </p>
-          <div data-aos="zoom-in" data-aos-delay='1500' className="space-x-2 md:space-x-5 space-y-0 md:space-y-0">
+          <div data-aos="zoom-in" data-aos-delay='1500' className="space-x-2 md:space-x-5 space-y-2 md:space-y-0">
             <button className="btn bg-[#583CEA] text-white px-8 text-lg rounded-lg py-6 hover:bg-white hover:border border-[#583CEA] hover:text-[#583CEA]">
               Explore More
             </button>
@@ -33,7 +33,7 @@ const Banner = () => {
               target="_blank"
               to="https://youtu.be/Gni1C1n-lLI?si=alyZI_xuYx1neysl"
             >
-              <button className="btn border px-6 text-lg rounded-lg py-6 border-[#583CEA] text-[#583CEA] hover:bg-[#583CEA] hover:text-white">
+              <button className="btn border px-6 text-lg rounded-lg py-6 border-[#583CEA] text-[#583CEA] hover:bg-[#583CEA] hover:text-white mr-2 md:mr-0">
               <MdOutlineSlowMotionVideo className="text-xl" /> Watch Now
               </button>
             </Link>
@@ -41,7 +41,7 @@ const Banner = () => {
         </div>
 
         <div data-aos="fade-left" className="w-full">
-          <ImageSlider/>
+          <BannerImageSlider/>
         </div>
       </div>
 

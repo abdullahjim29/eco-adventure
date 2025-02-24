@@ -24,7 +24,7 @@ const AdventureExperienceCard = ({ singleData }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 border-none btn bg-white">
             <FaLocationDot className="text-lg text-[#583CEA]" />
-            <span className="font-semibold text-lg">{location}</span>
+            <span className="font-semibold text-sm md:text-lg">{location}</span>
           </div>
           <div className="card-actions">
             <Link to={`/adventure-details/${id}`}>

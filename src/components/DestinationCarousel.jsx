@@ -5,18 +5,28 @@ import "swiper/css/autoplay";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 const destinations = [
-  { image: "https://i.ibb.co.com/21NyWvww/mountain-4335818-1280.jpg", name: "Nepal", hotels: "2,464 Hotels Available" },
-  { image: "https://i.ibb.co.com/Y4hs8shC/lighthouse-4744502-1280.jpg", name: "Australia", hotels: "36 Hotels Available" },
-  { image: "https://i.ibb.co.com/TMKdKVpF/waterfall-384663-1280.jpg", name: "Brazil", hotels: "1,319 Hotels Available" },
-  {image: 'https://i.ibb.co.com/tP2w46YN/wildlife-1536582-1280.jpg', name: 'Tanzania'},
-  {image: 'https://i.ibb.co.com/YB3htpkT/ground-camping-8260968-1280.jpg', name: 'USA'},
-  {image: 'https://i.ibb.co.com/SDp0Gn0N/canoe-2179196-1280.jpg', name: 'Peru'},
-  {image: 'https://i.ibb.co.com/zW0bgBGw/desert-4428269-1280.jpg', name: 'Morocco'},
+  { image: "https://i.ibb.co/6cfcckD7/bangladesh-4690975-1280.jpg", name: "Bangladesh"},
+  { image: "https://i.ibb.co/hFjmWwRQ/tcanada.jpg", name: "Canada", },
+  { image: "https://i.ibb.co/zW1chsTc/maldives-261506-1280.jpg", name: "Maldives" },
+  {image: 'https://i.ibb.co/B5PgLsfn/bankok.jpg', name: 'Bangkok'},
+  {image: 'https://i.ibb.co/CpPfgWN2/iceland-4436790-1280.jpg', name: 'Iceland'},
+  {image: 'https://i.ibb.co/spfk4Y6y/brazil.jpg', name: 'Brazil'},
+  {image: 'https://i.ibb.co/xSwgvNQg/turkey-5201495-1280.jpg', name: 'Turkey'},
+  {image: 'https://i.ibb.co/jP6DKQXf/australia-1281935-1280.jpg', name: 'Australia'},
+  {image: 'https://i.ibb.co/tppWvZ0B/New-Yourk.jpg', name: 'New York'},
+  {image: 'https://i.ibb.co.com/ycVFvNGB/Italy.jpg', name: 'Italy'},
+  {image: 'https://i.ibb.co.com/pBxSCBJN/Dubai.jpg', name: 'Dubai'},
+  {image: 'https://i.ibb.co.com/d4FVQTWx/Peru.jpg', name: 'Peru'},
+  {image: 'https://i.ibb.co.com/gbZ6WW93/Santorini-Greecejpg.jpg', name: 'Greece'},
+  {image: 'https://i.ibb.co.com/p6xPKpcQ/japan.jpg', name: 'Japan'},
+  {image: 'https://i.ibb.co.com/CK1M1GC2/eiffel-tower-3349075-1280.jpg', name: 'France'},
+  {image: 'https://i.ibb.co.com/Df5yGRch/indonesia-1578647-1280.jpg', name: 'Indonesia'},
 ];
 
 const DestinationCarousel = () => {
   return (
-    <div className="w-11/12 mx-auto flex flex-col items-center py-10 my-20">
+    <div className="hidden md:block">
+      <div className="w-11/12 mx-auto flex flex-col items-center py-10 my-20">
       <h2 className="text-2xl md:text-4xl font-bold">Most Popular Destinations</h2>
       <p className="text-gray-500 text-center mb-10 mt-6 w-full md:w-7/12">
       Expand your travel horizons with new facets! Explore the world by choosing your ideal travel destinations in Asia, Europe, America, Australia and more with ShareTrip.
@@ -40,8 +50,8 @@ const DestinationCarousel = () => {
         modules={[EffectCoverflow, Autoplay]}
         className="w-full max-w-5xl"
       >
-        {destinations.map((destination, index) => (
-          <SwiperSlide key={index} destination={destination} className="relative w-64 h-96">
+        {destinations.map((destination, idx) => (
+          <SwiperSlide key={idx} destination={destination} className="relative w-64 h-96">
             <img
               src={destination.image}
               alt={destination.name}
@@ -54,6 +64,7 @@ const DestinationCarousel = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+    </div>
     </div>
   );
 };
