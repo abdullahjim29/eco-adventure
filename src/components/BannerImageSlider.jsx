@@ -31,17 +31,6 @@ const BannerImageSlider = () => {
         autoPlay
       />
       </div>
-
-      <div className="block md:hidden">
-      <SimpleImageSlider
-        width={400}
-        height={270}
-        images={images}
-        showNavs={true}
-        navSize={25}
-        autoPlay
-      />
-      </div>
     </>
     );
 };
