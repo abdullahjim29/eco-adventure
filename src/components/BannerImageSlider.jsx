@@ -9,16 +9,40 @@ const BannerImageSlider = () => {
       ];
 
     return (
-        <div>
+        <>
+      <div className="hidden lg:block">
       <SimpleImageSlider
         width={600}
-        height={360}
+        height={380}
         images={images}
         showNavs={true}
         navSize={25}
         autoPlay
       />
-    </div>
+      </div>
+
+      <div className="hidden md:block lg:hidden">
+      <SimpleImageSlider
+        width={700}
+        height={380}
+        images={images}
+        showNavs={true}
+        navSize={25}
+        autoPlay
+      />
+      </div>
+
+      <div className="block md:hidden">
+      <SimpleImageSlider
+        width={400}
+        height={270}
+        images={images}
+        showNavs={true}
+        navSize={25}
+        autoPlay
+      />
+      </div>
+    </>
     );
 };
 

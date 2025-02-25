@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <div>
-            <header className="my-5">
+            <header className="">
                 {/* banner */}
                 <Banner/>
             </header>
